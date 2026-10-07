@@ -48,14 +48,38 @@ img {
 
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+
+    gap: 70px;
 }
 
+.nav {
+    display: flex;
+    align-items: center;
 
-/* Mobile logo hidden on desktop */
+    gap: 42px;
 
-.mobile-header-logo {
-    display: none;
+    margin: 0;
+}
+
+/* =========================
+   HEADER LOGO
+   ========================= */
+
+.header-logo {
+    display: block;
+
+    width: 58px;
+    height: 58px;
+
+    flex: 0 0 58px;
+}
+
+.header-logo img {
+    width: 58px;
+    height: 58px;
+
+    object-fit: cover;
 }
 
 
@@ -88,11 +112,6 @@ img {
     color: #8d0b0b;
 }
 
-
-/* =========================
-   HOME BUTTON
-   ========================= */
-
 .home-link {
     display: flex;
     align-items: center;
@@ -109,13 +128,6 @@ img {
     height: 25px;
 
     fill: currentColor;
-}
-
-
-/* Desktop: icon only */
-
-.home-text {
-    display: none;
 }
 
 
@@ -200,39 +212,7 @@ img {
     display: flex;
     align-items: flex-end;
 
-    padding-bottom: 58px;
-}
-
-
-/* =========================
-   HERO LOGO
-   ========================= */
-
-.logo-link {
-    display: block;
-}
-
-.logo {
-    width: 62px;
-    height: 62px;
-
-    object-fit: cover;
-}
-
-.hero-logo {
-    position: absolute;
-
-    top: 22px;
-    left: -100px;
-
-    display: block;
-}
-
-.hero-logo .logo {
-    width: 74px;
-    height: 74px;
-
-    object-fit: cover;
+    padding-bottom: 98px;
 }
 
 
@@ -461,7 +441,7 @@ footer {
        MOBILE LOGO
        ========================= */
 
-    .mobile-header-logo {
+    .header-logo {
         display: block;
 
         width: 52px;
@@ -470,7 +450,7 @@ footer {
         flex: 0 0 52px;
     }
 
-    .mobile-header-logo img {
+    .header-logo img {
         display: block;
 
         width: 52px;
@@ -515,6 +495,7 @@ footer {
         height: 3px;
 
         background: #1e1e1e;
+
         border-radius: 3px;
 
         transition:
@@ -608,26 +589,6 @@ footer {
 
 
     /* =========================
-       MOBILE HOME
-       ========================= */
-
-    .nav > .home-link {
-        gap: 11px;
-    }
-
-    .home-link svg {
-        width: 21px;
-        height: 21px;
-
-        flex-shrink: 0;
-    }
-
-    .home-text {
-        display: inline;
-    }
-
-
-    /* =========================
        MOBILE SOCIAL LINKS
        ========================= */
 
@@ -646,7 +607,6 @@ footer {
         display: flex;
 
         min-width: 0;
-
         padding: 0;
 
         align-items: center;
@@ -699,13 +659,6 @@ footer {
     }
 
 
-    /* Desktop hero logo hidden on mobile */
-
-    .hero-logo {
-        display: none;
-    }
-
-
     /* =========================
        MOBILE HERO TEXT
        ========================= */
@@ -727,7 +680,7 @@ footer {
     }
 
     .hero p {
-        margin: 14px 0 0;
+        margin: 34px 0 0;
 
         font-size: 18px;
         line-height: 1.4;
@@ -812,10 +765,6 @@ footer {
 
         gap: 32px;
 
-        /*
-         * Сохраняем компактные контакты,
-         * которые уже настроены на desktop.
-         */
         padding-top: 30px;
         padding-bottom: 30px;
     }
