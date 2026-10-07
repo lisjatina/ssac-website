@@ -644,14 +644,19 @@ footer {
        ========================= */
 
     .hero {
-        height: 500px;
+        height: 480px;
 
-        /*
-         * Отдельное кадрирование для телефона.
-         * Чуть больше правой части фотографии
-         * остаётся в кадре.
-         */
-        background-position: 48% center;
+        background:
+                linear-gradient(
+                        0deg,
+                        rgba(0, 0, 0, 0.38) 0%,
+                        rgba(0, 0, 0, 0.08) 45%,
+                        rgba(0, 0, 0, 0.02) 100%
+                ),
+                url("../images/agility-dog.jpg");
+
+        background-size: cover;
+        background-position: center center;
     }
 
     .hero-content {
