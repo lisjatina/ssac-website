@@ -306,26 +306,168 @@ footer {
 
 /* MOBILE */
 
+.menu-toggle {
+    display: none;
+}
+
+/* MOBILE */
+
 @media (max-width: 700px) {
 
+    /* =========================
+       HEADER
+       ========================= */
+
     .header-inner {
-        width: calc(100% - 32px);
+        position: relative;
+
+        width: 100%;
+        height: 70px;
+        margin: 0;
+        padding: 0 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+
+    /* =========================
+       HAMBURGER BUTTON
+       ========================= */
+
+    .menu-toggle {
+        display: flex;
+
+        width: 46px;
+        height: 46px;
+        padding: 8px;
+        margin: 0;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+
+        border: 0;
+        background: transparent;
+
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+
+        width: 30px;
+        height: 3px;
+
+        background: #1e1e1e;
+        border-radius: 2px;
+
+        transition:
+                transform 0.25s ease,
+                opacity 0.25s ease;
+    }
+
+
+    /* Hamburger → X */
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+
+    /* =========================
+       MOBILE NAVIGATION
+       ========================= */
+
+    .nav {
+        display: none;
+
+        position: absolute;
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 8px 24px 18px;
+
+        background: #ffffff;
+
+        border-top: 1px solid #eeeeee;
+        border-bottom: 1px solid #e8e8e8;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .nav.nav-open {
+        display: flex;
+    }
+
+    .nav > a {
+        display: block;
+
+        padding: 13px 0;
+
+        color: #1e1e1e;
+        text-decoration: none;
+
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .nav > a:hover {
+        color: #8d0b0b;
+    }
+
+
+    /* =========================
+       SOCIAL LINKS
+       ========================= */
+
+    .social-links {
+        display: flex;
+        align-items: center;
+
+        gap: 22px;
+
         padding-top: 16px;
     }
 
-    .logo {
-        width: 58px;
-        height: 58px;
+    .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 0;
+
+        border: 0;
     }
 
-    .nav {
-        gap: 14px;
-        padding-top: 12px;
+    .social-links svg {
+        width: 28px;
+        height: 28px;
     }
 
-    .nav a {
-        font-size: 14px;
-    }
+
+    /* =========================
+       HERO
+       ========================= */
 
     .hero {
         height: 420px;
@@ -337,6 +479,16 @@ footer {
         padding-bottom: 35px;
     }
 
+    /*
+       На desktop hero-text сдвинут влево на -100px.
+       На телефоне обязательно отменяем этот сдвиг,
+       иначе текст вылезает за экран.
+    */
+
+    .hero-text {
+        transform: none;
+    }
+
     .hero h1 {
         font-size: 38px;
         line-height: 1.03;
@@ -345,12 +497,35 @@ footer {
 
     .hero p {
         margin-top: 14px;
+
         font-size: 18px;
         line-height: 1.4;
     }
 
+
+    /* =========================
+       HERO LOGO
+       ========================= */
+
+    .hero-logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    .hero-logo .logo {
+        width: 58px;
+        height: 58px;
+    }
+
+
+    /* =========================
+       COMMON SECTIONS
+       ========================= */
+
     .section {
         width: calc(100% - 40px);
+
         padding: 65px 0;
     }
 
@@ -362,29 +537,58 @@ footer {
         font-size: 17px;
     }
 
+
+    /* =========================
+       ABOUT / TRAINING / CONTACT
+       ========================= */
+
     .about,
     .training-inner,
     .contact {
         grid-template-columns: 1fr;
+
         gap: 35px;
     }
+
+
+    /* =========================
+       IMAGES
+       ========================= */
 
     .section-image img,
     .training-image img {
         height: 280px;
+
+        object-fit: cover;
     }
+
+
+    /* На мобильном текст Treniņi идёт
+       перед фотографией */
 
     .training-image {
         order: 2;
     }
 
+
+    /* =========================
+       CONTACT
+       ========================= */
+
     .contact-details a {
         font-size: 21px;
     }
 
+
+    /* =========================
+       FOOTER
+       ========================= */
+
     .footer-inner {
         width: calc(100% - 40px);
+
         gap: 20px;
+
         flex-direction: column;
     }
 }

@@ -14,6 +14,15 @@
 <header class="header">
     <div class="header-inner">
 
+        <button class="menu-toggle"
+                type="button"
+                aria-label="Atvērt izvēlni"
+                aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <nav class="nav">
             <a href="#par-mums">Par Mums</a>
             <a href="#trenini">Treniņi</a>
@@ -208,5 +217,28 @@
         <span>Suņu Sporta Attīstības Centrs</span>
     </div>
 </footer>
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+
+    menuToggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('nav-open');
+
+        menuToggle.classList.toggle('active', isOpen);
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('nav-open');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+</script>
+
+</body>
+</html>
 </body>
 </html>
