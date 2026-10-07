@@ -1,14 +1,21 @@
+/* =========================
+   BASE
+   ========================= */
+
 * {
     box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 68px;
 }
 
 body {
     margin: 0;
+
     font-family: Arial, Helvetica, sans-serif;
+
     color: #1e1e1e;
     background: #ffffff;
 }
@@ -18,34 +25,17 @@ img {
     width: 100%;
 }
 
-.social-links {
-    display: flex;
-    gap: 14px;
-    margin-left: 10px;
-    padding-left: 24px;
-    border-left: 1px solid #d8d8d8;
-}
 
-.social-links a {
-    min-width: 24px;
-    text-align: center;
-    color: #777;
-    font-size: 14px;
-    text-transform: none;
-}
-
-.social-links a:hover {
-    color: #8d0b0b;
-}
-
-
-/* HEADER */
+/* =========================
+   HEADER
+   ========================= */
 
 .header {
     position: sticky;
     top: 0;
-    width: 100%;
     z-index: 100;
+
+    width: 100%;
 
     background: #ffffff;
     border-bottom: 1px solid #e8e8e8;
@@ -61,37 +51,10 @@ img {
     justify-content: flex-end;
 }
 
-.hero-content {
-    position: relative;
-}
 
-.hero-logo {
-    position: absolute;
-    top: 22px;
-    left: -100px;
-    display: block;
-}
-
-.hero-logo .logo {
-    width: 74px;
-    height: 74px;
-    object-fit: cover;
-}
-
-.hero-text {
-    color: white;
-    transform: translateX(-100px);
-}
-
-.logo-link {
-    display: block;
-}
-
-.logo {
-    width: 62px;
-    height: 62px;
-    object-fit: cover;
-}
+/* =========================
+   DESKTOP NAVIGATION
+   ========================= */
 
 .nav {
     display: flex;
@@ -106,6 +69,7 @@ img {
     font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 700;
+
     letter-spacing: 0.7px;
     text-transform: uppercase;
 
@@ -116,10 +80,94 @@ img {
     color: #8d0b0b;
 }
 
-/* HERO */
+
+/* =========================
+   HOME BUTTON
+   ========================= */
+
+.home-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+}
+
+.home-link svg {
+    width: 25px;
+    height: 25px;
+
+    fill: currentColor;
+}
+
+/* На desktop оставляем только домик */
+
+.home-text {
+    display: none;
+}
+
+
+/* =========================
+   SOCIAL LINKS
+   ========================= */
+
+.social-links {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    margin-left: 10px;
+    padding-left: 24px;
+
+    border-left: 1px solid #d8d8d8;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 24px;
+
+    color: #1e1e1e;
+
+    text-transform: none;
+}
+
+.social-links a:hover {
+    color: #8d0b0b;
+}
+
+.social-links svg {
+    width: 24px;
+    height: 24px;
+
+    fill: currentColor;
+}
+
+
+/* =========================
+   HAMBURGER
+   ========================= */
+
+/* На desktop hamburger отсутствует */
+
+.menu-toggle {
+    display: none;
+}
+
+
+/* =========================
+   HERO
+   ========================= */
 
 .hero {
     position: relative;
+
     height: 350px;
 
     background:
@@ -136,6 +184,8 @@ img {
 }
 
 .hero-content {
+    position: relative;
+
     width: min(1180px, calc(100% - 60px));
     height: 100%;
     margin: 0 auto;
@@ -146,20 +196,47 @@ img {
     padding-bottom: 58px;
 }
 
-.hero-text {
-    color: white;
 
-    /* Сдвигаем заголовок и подзаголовок влево */
-    transform: translateX(-100px);
+/* =========================
+   HERO LOGO
+   ========================= */
+
+.logo-link {
+    display: block;
 }
 
-.hero-label {
-    display: inline-block;
-    margin-bottom: 12px;
+.logo {
+    width: 62px;
+    height: 62px;
 
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 3px;
+    object-fit: cover;
+}
+
+.hero-logo {
+    position: absolute;
+
+    top: 22px;
+    left: -100px;
+
+    display: block;
+}
+
+.hero-logo .logo {
+    width: 74px;
+    height: 74px;
+
+    object-fit: cover;
+}
+
+
+/* =========================
+   HERO TEXT
+   ========================= */
+
+.hero-text {
+    color: #ffffff;
+
+    transform: translateX(-100px);
 }
 
 .hero h1 {
@@ -168,32 +245,39 @@ img {
     font-size: clamp(42px, 4vw, 62px);
     line-height: 1.02;
     font-weight: 700;
+
     letter-spacing: -1.5px;
 }
 
 .hero p {
     margin: 18px 0 0;
+
     font-size: 22px;
     line-height: 1.5;
 }
 
 
-/* COMMON SECTIONS */
+/* =========================
+   COMMON SECTIONS
+   ========================= */
 
 .section {
     width: min(1180px, calc(100% - 60px));
     margin: 0 auto;
+
     padding: 95px 0;
 }
 
 .section-label {
     display: block;
+
     margin-bottom: 12px;
 
     color: #8d0b0b;
 
     font-size: 13px;
     font-weight: 700;
+
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -203,34 +287,43 @@ img {
 
     font-size: 44px;
     line-height: 1.1;
+
     letter-spacing: -1px;
 }
 
 .section p {
-    margin: 0;
     max-width: 570px;
+    margin: 0;
 
     font-size: 18px;
     line-height: 1.7;
 }
 
 
-/* ABOUT */
+/* =========================
+   ABOUT
+   ========================= */
 
 .about {
     display: grid;
+
     grid-template-columns: 0.8fr 1.2fr;
+
     gap: 80px;
+
     align-items: center;
 }
 
 .section-image img {
     height: 390px;
+
     object-fit: cover;
 }
 
 
-/* TRAINING */
+/* =========================
+   TRAINING
+   ========================= */
 
 .training {
     background: #f5f5f3;
@@ -238,34 +331,48 @@ img {
 
 .training-inner {
     display: grid;
+
     grid-template-columns: 1.2fr 0.8fr;
+
     gap: 80px;
+
     align-items: center;
 }
 
 .training-image img {
     height: 390px;
+
     object-fit: cover;
 }
 
 
-/* CONTACT */
+/* =========================
+   CONTACT
+   ========================= */
 
 .contact {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+
+    gap: 50px;
+
     align-items: end;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .organisation {
-    font-weight: 600;
     margin-bottom: 5px !important;
+
+    font-weight: 600;
 }
 
 .contact-details {
     display: flex;
     flex-direction: column;
+
     gap: 15px;
 
     padding-bottom: 5px;
@@ -273,6 +380,7 @@ img {
 
 .contact-details a {
     color: #0a0a0a;
+
     text-decoration: none;
 
     font-size: 24px;
@@ -284,181 +392,351 @@ img {
 }
 
 
-/* FOOTER */
+/* =========================
+   FOOTER
+   ========================= */
 
 footer {
-    background: #171717;
     color: #ffffff;
+    background: #171717;
 }
 
 .footer-inner {
     width: min(1180px, calc(100% - 60px));
     margin: 0 auto;
-    padding: 28px 0;
+
+    padding: 20px 0;
 
     display: flex;
     justify-content: space-between;
 
     font-size: 13px;
+
     opacity: 0.75;
 }
 
 
-/* MOBILE */
-
-.menu-toggle {
-    display: none;
-}
-
-/* MOBILE */
-
-/* MOBILE */
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 700px) {
 
+    html {
+        scroll-padding-top: 68px;
+    }
+
+
     /* =========================
-       HEADER
+       MOBILE HEADER
        ========================= */
 
+    .header {
+        height: 68px;
+    }
+
     .header-inner {
+        position: relative;
+
         width: 100%;
-        height: 72px;
-        padding: 0 24px;
+        height: 68px;
+        margin: 0;
+
+        padding: 0 18px;
 
         display: flex;
         align-items: center;
         justify-content: flex-end;
     }
 
-    /* На мобильном обычное меню скрываем */
-    .nav > a,
-    .social-links {
-        display: none;
-    }
 
-    .nav {
-        display: flex;
-        align-items: center;
-        padding: 0;
-        margin: 0;
-        gap: 0;
-    }
+    /* =========================
+       HAMBURGER
+       ========================= */
 
-    /* Hamburger */
     .menu-toggle {
+        position: relative;
+        z-index: 102;
+
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
 
-        width: 38px;
-        height: 28px;
+        width: 44px;
+        height: 44px;
 
-        padding: 0;
         margin: 0;
+        padding: 0;
 
-        background: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 6px;
+
+        background: transparent;
         border: 0;
+
         cursor: pointer;
     }
 
     .menu-toggle span {
         display: block;
 
-        width: 100%;
-        height: 4px;
+        width: 31px;
+        height: 3px;
 
         background: #1e1e1e;
+
         border-radius: 3px;
+
+        transition:
+                transform 0.25s ease,
+                opacity 0.25s ease;
+    }
+
+
+    /* Hamburger -> X */
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
     }
 
 
     /* =========================
-       HERO
+       MOBILE NAVIGATION
+       ========================= */
+
+    .nav {
+        position: absolute;
+
+        top: 68px;
+        left: 0;
+
+        z-index: 101;
+
+        display: none;
+
+        width: 100%;
+
+        margin: 0;
+        padding: 8px 24px 18px;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        background: #ffffff;
+
+        border-top: 1px solid #eeeeee;
+        border-bottom: 1px solid #e8e8e8;
+
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    }
+
+
+    /* JS добавляет nav-open */
+
+    .nav.nav-open {
+        display: flex;
+    }
+
+
+    /* =========================
+       MOBILE MENU LINKS
+       ========================= */
+
+    .nav > a {
+        display: flex;
+
+        width: 100%;
+        height: auto;
+
+        padding: 14px 0;
+
+        align-items: center;
+        justify-content: flex-start;
+
+        color: #1e1e1e;
+
+        font-size: 16px;
+        font-weight: 700;
+
+        letter-spacing: 0.7px;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .nav > a:hover {
+        color: #8d0b0b;
+    }
+
+
+    /* =========================
+       MOBILE HOME
+       ========================= */
+
+    .nav > .home-link {
+        gap: 11px;
+    }
+
+    .home-link svg {
+        width: 21px;
+        height: 21px;
+
+        flex-shrink: 0;
+    }
+
+    .home-text {
+        display: inline;
+    }
+
+
+    /* =========================
+       MOBILE SOCIAL LINKS
+       ========================= */
+
+    .social-links {
+        display: flex;
+
+        gap: 20px;
+
+        margin: 0;
+        padding: 17px 0 2px;
+
+        border-left: 0;
+    }
+
+    .social-links a {
+        display: flex;
+
+        min-width: 0;
+
+        padding: 0;
+
+        align-items: center;
+        justify-content: center;
+
+        color: #1e1e1e;
+
+        border: 0;
+    }
+
+    .social-links svg {
+        width: 27px;
+        height: 27px;
+
+        fill: currentColor;
+    }
+
+
+    /* =========================
+       MOBILE HERO
        ========================= */
 
     .hero {
-        height: 520px;
+        height: 500px;
 
         /*
-         * На desktop фотографию не меняем.
-         * На мобильном немного смещаем,
-         * чтобы морда и нос собаки
-         * полностью помещались в кадр.
+         * Отдельное кадрирование для телефона.
+         * Чуть больше правой части фотографии
+         * остаётся в кадре.
          */
-        background-position: 53% center;
+        background-position: 48% center;
     }
 
     .hero-content {
-        width: calc(100% - 40px);
-        height: 100%;
-        margin: 0 auto;
-
         position: relative;
+
+        width: calc(100% - 36px);
+        height: 100%;
+
+        margin: 0 auto;
+        padding-bottom: 30px;
 
         display: flex;
         align-items: flex-end;
-
-        padding-bottom: 35px;
     }
 
-    /* Логотип внутри фотографии */
+
+    /* =========================
+       MOBILE HERO LOGO
+       ========================= */
+
     .hero-logo {
         position: absolute;
-        top: 25px;
+
+        top: 20px;
         left: 0;
 
         display: block;
     }
 
     .hero-logo .logo {
-        width: 74px;
-        height: 74px;
+        width: 64px;
+        height: 64px;
 
         object-fit: cover;
     }
 
+
+    /* =========================
+       MOBILE HERO TEXT
+       ========================= */
+
     .hero-text {
         color: #ffffff;
 
-        /* Убираем desktop-сдвиг -100px */
         transform: none;
     }
 
     .hero h1 {
         margin: 0;
 
-        font-size: 38px;
-        line-height: 1.03;
+        font-size: 34px;
+        line-height: 1.04;
         font-weight: 700;
-        letter-spacing: -1px;
+
+        letter-spacing: -0.8px;
     }
 
     .hero p {
-        margin: 18px 0 0;
+        margin: 14px 0 0;
 
-        font-size: 20px;
+        font-size: 18px;
         line-height: 1.4;
     }
 
 
     /* =========================
-       COMMON SECTIONS
+       MOBILE COMMON SECTIONS
        ========================= */
 
     .section {
         width: calc(100% - 40px);
-        padding: 65px 0;
+
+        padding: 60px 0;
     }
 
     .section-label {
-        margin-bottom: 12px;
+        margin-bottom: 10px;
 
-        font-size: 13px;
+        font-size: 12px;
+
         letter-spacing: 2px;
     }
 
     .section h2 {
-        margin-bottom: 25px;
+        margin-bottom: 22px;
 
         font-size: 36px;
         line-height: 1.1;
@@ -466,32 +744,35 @@ footer {
 
     .section p {
         font-size: 17px;
-        line-height: 1.7;
+        line-height: 1.65;
     }
 
 
     /* =========================
-       ABOUT
+       MOBILE ABOUT
        ========================= */
 
     .about {
         grid-template-columns: 1fr;
-        gap: 35px;
+
+        gap: 32px;
     }
 
     .section-image img {
         height: 280px;
+
         object-fit: cover;
     }
 
 
     /* =========================
-       TRAINING
+       MOBILE TRAINING
        ========================= */
 
     .training-inner {
         grid-template-columns: 1fr;
-        gap: 35px;
+
+        gap: 32px;
     }
 
     .training-image {
@@ -500,22 +781,25 @@ footer {
 
     .training-image img {
         height: 280px;
+
         object-fit: cover;
     }
 
 
     /* =========================
-       CONTACT
+       MOBILE CONTACT
        ========================= */
 
     .contact {
         grid-template-columns: 1fr;
-        gap: 35px;
+
+        gap: 32px;
     }
 
     .contact-details {
+        gap: 14px;
+
         padding-bottom: 0;
-        gap: 15px;
     }
 
     .contact-details a {
@@ -524,13 +808,16 @@ footer {
 
 
     /* =========================
-       FOOTER
+       MOBILE FOOTER
        ========================= */
 
     .footer-inner {
         width: calc(100% - 40px);
 
+        padding: 24px 0;
+
         flex-direction: column;
-        gap: 20px;
+
+        gap: 12px;
     }
 }
