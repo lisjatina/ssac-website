@@ -312,6 +312,8 @@ footer {
 
 /* MOBILE */
 
+/* MOBILE */
+
 @media (max-width: 700px) {
 
     /* =========================
@@ -319,149 +321,54 @@ footer {
        ========================= */
 
     .header-inner {
-        position: relative;
-
         width: 100%;
-        height: 70px;
-        margin: 0;
-        padding: 0 20px;
+        height: 72px;
+        padding: 0 24px;
 
         display: flex;
         align-items: center;
         justify-content: flex-end;
     }
 
+    /* На мобильном обычное меню скрываем */
+    .nav > a,
+    .social-links {
+        display: none;
+    }
 
-    /* =========================
-       HAMBURGER BUTTON
-       ========================= */
+    .nav {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        gap: 0;
+    }
 
+    /* Hamburger */
     .menu-toggle {
         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
-        width: 46px;
-        height: 46px;
-        padding: 8px;
+        width: 38px;
+        height: 28px;
+
+        padding: 0;
         margin: 0;
 
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 6px;
-
+        background: none;
         border: 0;
-        background: transparent;
-
         cursor: pointer;
     }
 
     .menu-toggle span {
         display: block;
 
-        width: 30px;
-        height: 3px;
+        width: 100%;
+        height: 4px;
 
         background: #1e1e1e;
-        border-radius: 2px;
-
-        transition:
-                transform 0.25s ease,
-                opacity 0.25s ease;
-    }
-
-
-    /* Hamburger → X */
-
-    .menu-toggle.active span:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
-    }
-
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle.active span:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
-    }
-
-
-    /* =========================
-       MOBILE NAVIGATION
-       ========================= */
-
-    .nav {
-        display: none;
-
-        position: absolute;
-        top: 70px;
-        left: 0;
-
-        width: 100%;
-
-        padding: 8px 24px 18px;
-
-        background: #ffffff;
-
-        border-top: 1px solid #eeeeee;
-        border-bottom: 1px solid #e8e8e8;
-
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-
-        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-    }
-
-    .nav.nav-open {
-        display: flex;
-    }
-
-    .nav > a {
-        display: block;
-
-        padding: 13px 0;
-
-        color: #1e1e1e;
-        text-decoration: none;
-
-        font-size: 16px;
-        font-weight: 600;
-        letter-spacing: 0.2px;
-
-        border-bottom: 1px solid #eeeeee;
-    }
-
-    .nav > a:hover {
-        color: #8d0b0b;
-    }
-
-
-    /* =========================
-       SOCIAL LINKS
-       ========================= */
-
-    .social-links {
-        display: flex;
-        align-items: center;
-
-        gap: 22px;
-
-        padding-top: 16px;
-    }
-
-    .social-links a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        padding: 0;
-
-        border: 0;
-    }
-
-    .social-links svg {
-        width: 28px;
-        height: 28px;
+        border-radius: 3px;
     }
 
 
@@ -470,52 +377,67 @@ footer {
        ========================= */
 
     .hero {
-        height: 420px;
-        background-position: 58% center;
+        height: 520px;
+
+        /*
+         * На desktop фотографию не меняем.
+         * На мобильном немного смещаем,
+         * чтобы морда и нос собаки
+         * полностью помещались в кадр.
+         */
+        background-position: 53% center;
     }
 
     .hero-content {
         width: calc(100% - 40px);
+        height: 100%;
+        margin: 0 auto;
+
+        position: relative;
+
+        display: flex;
+        align-items: flex-end;
+
         padding-bottom: 35px;
     }
 
-    /*
-       На desktop hero-text сдвинут влево на -100px.
-       На телефоне обязательно отменяем этот сдвиг,
-       иначе текст вылезает за экран.
-    */
+    /* Логотип внутри фотографии */
+    .hero-logo {
+        position: absolute;
+        top: 25px;
+        left: 0;
+
+        display: block;
+    }
+
+    .hero-logo .logo {
+        width: 74px;
+        height: 74px;
+
+        object-fit: cover;
+    }
 
     .hero-text {
+        color: #ffffff;
+
+        /* Убираем desktop-сдвиг -100px */
         transform: none;
     }
 
     .hero h1 {
+        margin: 0;
+
         font-size: 38px;
         line-height: 1.03;
+        font-weight: 700;
         letter-spacing: -1px;
     }
 
     .hero p {
-        margin-top: 14px;
+        margin: 18px 0 0;
 
-        font-size: 18px;
+        font-size: 20px;
         line-height: 1.4;
-    }
-
-
-    /* =========================
-       HERO LOGO
-       ========================= */
-
-    .hero-logo {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-    }
-
-    .hero-logo .logo {
-        width: 58px;
-        height: 58px;
     }
 
 
@@ -525,55 +447,76 @@ footer {
 
     .section {
         width: calc(100% - 40px);
-
         padding: 65px 0;
     }
 
+    .section-label {
+        margin-bottom: 12px;
+
+        font-size: 13px;
+        letter-spacing: 2px;
+    }
+
     .section h2 {
+        margin-bottom: 25px;
+
         font-size: 36px;
+        line-height: 1.1;
     }
 
     .section p {
         font-size: 17px;
+        line-height: 1.7;
     }
 
 
     /* =========================
-       ABOUT / TRAINING / CONTACT
+       ABOUT
        ========================= */
 
-    .about,
-    .training-inner,
-    .contact {
+    .about {
         grid-template-columns: 1fr;
-
         gap: 35px;
     }
 
-
-    /* =========================
-       IMAGES
-       ========================= */
-
-    .section-image img,
-    .training-image img {
+    .section-image img {
         height: 280px;
-
         object-fit: cover;
     }
 
 
-    /* На мобильном текст Treniņi идёт
-       перед фотографией */
+    /* =========================
+       TRAINING
+       ========================= */
+
+    .training-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
 
     .training-image {
         order: 2;
+    }
+
+    .training-image img {
+        height: 280px;
+        object-fit: cover;
     }
 
 
     /* =========================
        CONTACT
        ========================= */
+
+    .contact {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .contact-details {
+        padding-bottom: 0;
+        gap: 15px;
+    }
 
     .contact-details a {
         font-size: 21px;
@@ -587,8 +530,7 @@ footer {
     .footer-inner {
         width: calc(100% - 40px);
 
-        gap: 20px;
-
         flex-direction: column;
+        gap: 20px;
     }
 }
