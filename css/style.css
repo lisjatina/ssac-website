@@ -684,6 +684,7 @@ footer {
 
         font-size: 18px;
         line-height: 1.4;
+        transform: translateY(20px);
     }
 
 
