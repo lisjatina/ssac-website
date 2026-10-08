@@ -640,10 +640,11 @@ footer {
 
         background:
                 linear-gradient(
-                        0deg,
-                        rgba(0, 0, 0, 0.38) 0%,
-                        rgba(0, 0, 0, 0.08) 45%,
-                        rgba(0, 0, 0, 0.02) 100%
+                        180deg,
+                        rgba(0, 0, 0, 0.55) 0%,
+                        rgba(0, 0, 0, 0.28) 20%,
+                        rgba(0, 0, 0, 0.02) 48%,
+                        rgba(0, 0, 0, 0.30) 100%
                 ),
                 url("../images/agility-dog.jpg");
 
@@ -686,7 +687,7 @@ footer {
 
         font-size: 32px;
         line-height: 1.08;
-        font-weight: 700;
+        font-weight: 600;
         letter-spacing: -0.8px;
 
         color: #ffffff;
